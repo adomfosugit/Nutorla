@@ -1,57 +1,73 @@
 /* eslint no-use-before-define: 0 */  // --> OFF
-
 import React, { useRef, useState } from 'react';
 import Link from 'next/link';
 import { AiOutlineMinus, AiOutlinePlus, AiOutlineLeft, AiOutlineShopping } from 'react-icons/ai';
 import { TiDeleteOutline } from 'react-icons/ti';
-import toast from 'react-hot-toast';
 import { useUser } from '@auth0/nextjs-auth0/client';
 
 import { useStateContext } from '../context/StateContext';
 import { urlFor } from '../lib/client';
 import { usePaystackPayment } from 'react-paystack';
-import ContactUs from './ContactUs';
-//import Cartmessage from './Cartmessage';
-//import emailjs from "@emailjs/browser";
+
 
 
 
 const Cartlogin = () => {
   const cartRef = useRef();
   const { user } = useUser();
-  const [showPaystack, setShowPaystack] = useState(false);
-    const handleConfirmClick = () => {
-      setShowPaystack(true);
-    }
-  //const form = useRef()
-  {/*const sendEmail = (e) => {
-    e.preventDefault();
+  const [showForm, setShowForm] = useState(false);
 
-    emailjs
-      .sendForm(
-        "service_a4ti7od",
-        "template_i36ys5d",
-        form.current,
-        "qKcs0-60JEaHBzgTv"
-      )
-      .then(
-        (result) => {
-          alert(result.text);
-        },
-        (error) => {
-          alert(error.text);
-        }
-      );
-  }; */}
-  const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuanitity, onRemove,setCont, cont} = useStateContext();
+const handleClick = () => {
+  setShowForm(true);
+};
+const handleClose = () => {
+  setShowForm(false);
+}
+    const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuanitity, onRemove,setCont, cont} = useStateContext();
+    const [shippingDetails, setShippingDetails] = useState({
+      Name: '',
+      Address: '',
+      Phone: '',
+      
+    });
+    const [formValid, setFormValid] = useState(false);
+    const handleInputChange = (event) => {
+      const { placeholder, value } = event.target;
+      setShippingDetails((prevState) => ({
+        ...prevState,
+        [placeholder]: value,
+       
+      }));
+
+      //validity of form
+      setFormValid(event.target.form.checkValidity());
+    };
+   
+   // Paystack to confirm order
+    
   const config = {
     reference: (new Date()).getTime(),
     username: `${user.name}`,
     email: `${user.email}`,
     amount: `${totalPrice * 100}`,
-    publicKey: 'pk_live_7b0117b105694184900ff75ce52987cae7c1b04f',
-    //publicKey: 'pk_test_1156b935d863b0c6d92a19b3678d034562cf062a',
-    currency: 'GHS'
+    //publicKey: 'pk_live_7b0117b105694184900ff75ce52987cae7c1b04f',
+    publicKey: 'pk_test_1156b935d863b0c6d92a19b3678d034562cf062a',
+    currency: 'GHS',
+    metadata:{
+      "custom_fields":[
+        
+        {
+          "display_name":"Cart Items",
+          "variable_name":"cart_items",
+          "value": JSON.stringify(cartItems)
+        },
+        {
+          display_name: 'Shipping Details',
+          variable_name: 'shipping_details',
+          value: JSON.stringify(shippingDetails),
+        },
+      ]
+    }
 };
  
 // you can call this function anything
@@ -72,7 +88,7 @@ const PaystackHookExample = () => {
       <div className='btn-container'>
           <button  type = 'button' className='btn' onClick={() => {
               initializePayment(onSuccess, onClose)
-          }}>Pay with Paystack</button>
+          }}>Submit and Pay</button>
       </div>
     );
 };
@@ -144,21 +160,26 @@ const PaystackHookExample = () => {
               <h3> GHC {totalPrice}</h3>
             </div>
         <div className='btn-container'>
-            <button
-                type="button"
-                 onClick={() => {
-                  setCont(true)
-                  handleConfirmClick()
-                }}
-                className="btn"
-              >
-                Please Confirm Order
-        </button> 
+         <div > 
+         <button onClick={handleClick} className='btn' >checkout </button>
+         
+         { showForm && (
+        <form>
+  <input type="text" placeholder="Name" value={shippingDetails.Name} onChange={handleInputChange}  required/>
+  <input type="text" placeholder="Phone" value={shippingDetails.Phone} onChange={handleInputChange} required />
+  <input type="text" placeholder="Address" value={shippingDetails.Address} onChange={handleInputChange}  required/>
+  {formValid && <PaystackHookExample />}
+</form> 
+
+)}
+
+         </div> 
           </div>
         
-             {cont && <ContactUs />}     
-            
-               {showPaystack?<PaystackHookExample /> : null}
+        
+          
+        
+              
               
               
             
@@ -169,4 +190,4 @@ const PaystackHookExample = () => {
   )
 }
 
-export default Cartlogin
+export default Cartlogin 
