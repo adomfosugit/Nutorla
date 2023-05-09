@@ -5,7 +5,7 @@ import Footer from './Footer'
 
 const Layout = ({children}) => {
   return (
-    <div className='layout'>
+    <div className= 'layout'>
         <Head>
             <title>
                Sneakers Hub 
