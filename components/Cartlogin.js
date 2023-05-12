@@ -23,7 +23,7 @@ const handleClick = () => {
 const handleClose = () => {
   setShowForm(false);
 }
-    const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuanitity, onRemove,setCont, cont} = useStateContext();
+    const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuanitity, onRemove} = useStateContext();
     const [shippingDetails, setShippingDetails] = useState({
       Name: '',
       Address: '',
@@ -57,9 +57,9 @@ const handleClose = () => {
       "custom_fields":[
         
         {
-          "display_name":"Cart Items",
-          "variable_name":"cart_items",
-          "value": JSON.stringify(cartItems)
+          display_name:'Cart Items',
+          variable_name:'cart_items',
+          value: JSON.stringify(cartItems)
         },
         {
           display_name: 'Shipping Details',
@@ -164,24 +164,24 @@ const PaystackHookExample = () => {
          <button onClick={handleClick} className='btn' >checkout </button>
          
          { showForm && (
-        <form>
-  <input type="text" placeholder="Name" value={shippingDetails.Name} onChange={handleInputChange}  required/>
-  <input type="text" placeholder="Phone" value={shippingDetails.Phone} onChange={handleInputChange} required />
-  <input type="text" placeholder="Address" value={shippingDetails.Address} onChange={handleInputChange}  required/>
+        <form >
+  <input  type="text" placeholder="Name" value={shippingDetails.Name} onChange={handleInputChange}  required/>
+  <input  type="text" placeholder="Phone" value={shippingDetails.Phone} onChange={handleInputChange} required />
+  <input  type="text" placeholder="Address" value={shippingDetails.Address} onChange={handleInputChange}  required/>
   {formValid && <PaystackHookExample />}
+  <div>
+    <div>  <TiDeleteOutline onClick={handleClose}  size={40} /> </div>
+  
+
+ </div>
+
+
 </form> 
 
 )}
 
          </div> 
-          </div>
-        
-        
-          
-        
-              
-              
-              
+          </div>          
             
           </div>
         )}
