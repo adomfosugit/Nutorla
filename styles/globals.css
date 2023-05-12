@@ -1,4 +1,4 @@
-@tailwind base;
+
 @tailwind components;
 @tailwind utilities;
 html,
@@ -861,3 +861,4 @@ input[type=submit]:hover {
   margin: auto;
 }
 }
+

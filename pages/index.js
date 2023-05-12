@@ -1,5 +1,5 @@
 import React from 'react'
-import { Herobanner, Product } from '../components/index'
+import { Herobanner, Product,Sidebar } from '../components/index'
 import { client } from '../lib/client'
 //if banner data is available ln7 then parse the first element as a prop to herobanner instead
 
@@ -7,7 +7,21 @@ import { client } from '../lib/client'
 const index = ({products, bannerData} ) => {
   return (
     <div>
-      <Herobanner herobanner = { bannerData.length && bannerData[0] } />
+      <div>
+  <div className="flex flex-row gap-4">
+    <div className="  w-2/12 p-5 sm:block hidden bg-slate-50 rounded-2xl "><Sidebar /></div>
+     <div className=" flex-1  w-3/5 h-[500px] sm:w-1/2  "><Herobanner herobanner = { bannerData} /></div> 
+     <div className=" flex-col w-2/12  sm:block hidden  "><div className='flex-col items-center p-5 justify-items-center rounded-xl h-[45%] bg-slate-50 mb-[10px] '>
+      <div>affordable</div>
+      <div> quality clothes</div>
+      <div> Fastest Delivery</div>
+     </div>
+     <div className='rounded-xl h-[45%] bg-blue-200  '>flyer </div>
+     </div>
+  </div>
+</div>
+
+      
     
       
       <div className='products-heading'>

@@ -1,5 +1,5 @@
 /* eslint no-use-before-define: 0 */  // --> OFF
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { AiOutlineMinus, AiOutlinePlus, AiOutlineLeft, AiOutlineShopping } from 'react-icons/ai';
 import { TiDeleteOutline } from 'react-icons/ti';
@@ -16,6 +16,7 @@ const Cartlogin = () => {
   const cartRef = useRef();
   const { user } = useUser();
   const [showForm, setShowForm] = useState(false);
+  
 
 const handleClick = () => {
   setShowForm(true);
@@ -23,7 +24,11 @@ const handleClick = () => {
 const handleClose = () => {
   setShowForm(false);
 }
-    const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuanitity, onRemove} = useStateContext();
+
+
+    const { totalPrice, totalQuantities, cartItems,setShowCart, toggleCartItemQuanitity, onRemove} = useStateContext();
+    // Local Storage
+     
     const [shippingDetails, setShippingDetails] = useState({
       Name: '',
       Address: '',
@@ -42,6 +47,10 @@ const handleClose = () => {
       //validity of form
       setFormValid(event.target.form.checkValidity());
     };
+    //
+    
+    
+    
    
    // Paystack to confirm order
     

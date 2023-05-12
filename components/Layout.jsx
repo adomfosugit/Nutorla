@@ -3,15 +3,17 @@ import Head from 'next/head'
 import Navbar from './Navbar'
 import Footer from './Footer'
 
+
 const Layout = ({children}) => {
   return (
-    <div className= 'layout'>
-        <Head>
-            <title>
-               Sneakers Hub 
+    <div className=  'p-2 bg-zinc-200 '>
+    
+        <Head >
+            <title >
+               NURTOLA 
             </title>
         </Head>
-        <header>
+        <header >
             <Navbar />
         </header>
         <main className='main-container'>
