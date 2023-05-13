@@ -15,11 +15,18 @@ const SearchPage = ({products}) => {
 
 
   return (
-    <div className='products-container'>
-         
-    {products.map((product) => <Product  key =
-    {product._id} product = {product}/>)}
- </div>
+    <div className='bg-slate-50'>
+      <div className='products-heading bg-blue-700'>
+        <h2 className='font-sans'>{searchQuery}</h2>
+        <p></p>
+      </div>
+       <div >
+         <div className='products-container '>
+          {products.map((product) => <Product  key =
+          {product._id} product = {product}/>)}
+          </div>
+       </div>
+       </div>
   );
 };
 export const getServerSideProps = async (context) => {
