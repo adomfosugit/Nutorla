@@ -10,6 +10,14 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    screens: {
+      
+
+      'half': '960px',
+      // => @media (min-width: 960px) { ... }
+
+
+    },
   },
   plugins: [],
 }

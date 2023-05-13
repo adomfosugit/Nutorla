@@ -18,7 +18,7 @@ const Navbar = () => {
       <p className='text-gradient'>
         <Link href="/" className='font-bold text-lg '>NUTORLA</Link>
       </p> 
-      <div className='invisible md:visible w-max'><SearchInput/></div>
+      <div className='invisible half:visible w-max'><SearchInput/></div>
       <div className=' flex'>  
       <button type="button" className="cart-icon" onClick={() => setShowCart(true)}>
         <AiOutlineShopping />
@@ -38,7 +38,7 @@ const Navbar = () => {
       {showCart && <Cart />}
       </div>
       </div>
-      <div className='visible md:invisible md:hidden items-center mx-10 drop-shadow'><SearchInput/> </div>
+      <div className='visible half:invisible md:hidden items-center mx-10 drop-shadow'><SearchInput/> </div>
   </div>
   
     

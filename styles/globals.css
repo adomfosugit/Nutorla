@@ -102,10 +102,10 @@ width: 100%;
 .products-container{
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   gap: 15px;
   margin-top: 20px;
-  width: 100%;
+  width: 80%;
 }
 .product-card{
  cursor: pointer;
@@ -210,7 +210,7 @@ text-align:left;
 .products-heading{
   text-align: center;
   margin: 40px 0px;
- color: #327;
+ color: #ffff;
 
 }
 .products-heading h2{

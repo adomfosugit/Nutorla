@@ -32,7 +32,7 @@ const Herobanner = ({ herobanner }) => {
     disableOnInteraction: false,
   };
   return (
-    <div className='rounded-2xl'>
+    <div className='rounded-2xl bg-blue-50'>
       <Swiper
         className=''
         onSwiper={setSwiper}
@@ -52,7 +52,7 @@ const Herobanner = ({ herobanner }) => {
                 alt='sneakers'
                 layout ='responsive'               
                 style={{ objectFit: 'cover'}}
-               className=' h-[calc(100vw/1.8)]  w-max md:h-[500px] w-min  '
+               className=' h-[calc(100vw/1.8)]  w-max half:h-[500px] w-min  '
               />
             </div>
           </SwiperSlide>

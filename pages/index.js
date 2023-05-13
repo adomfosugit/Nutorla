@@ -1,6 +1,9 @@
 import React from 'react'
 import { Herobanner, Product,Sidebar } from '../components/index'
 import { client } from '../lib/client'
+import { BsTelephoneInbound } from 'react-icons/bs'
+import { TbTruckDelivery } from 'react-icons/tb'
+import { FaRegHandshake } from 'react-icons/fa'
 //if banner data is available ln7 then parse the first element as a prop to herobanner instead
 
 //import { useUser } from '@auth0/nextjs-auth0/client';
@@ -9,31 +12,52 @@ const index = ({products, bannerData} ) => {
     <div>
       <div>
   <div className="flex flex-row gap-4">
-    <div className="  w-2/12 p-5 sm:block hidden bg-slate-50 rounded-2xl "><Sidebar /></div>
+    <div className="  w-2/12 p-5 half:block hidden bg-slate-50 rounded-2xl "><Sidebar /></div>
      <div className=" flex-1  w-3/5 h-[500px] sm:w-1/2  "><Herobanner herobanner = { bannerData} /></div> 
-     <div className=" flex-col w-2/12  sm:block hidden  "><div className='flex-col items-center p-5 justify-items-center rounded-xl h-[45%] bg-slate-50 mb-[10px] '>
-      <div>affordable</div>
-      <div> quality clothes</div>
-      <div> Fastest Delivery</div>
+     <div className=" flex-col w-2/12  half:block hidden half: block hidden "><div className='flex-col items-center p-5 justify-items-center rounded-xl h-[20%] bg-zinc-900 mb-[10px] '>
+      <div className='flex-col p-4'>
+        <p className='text-white items-center'><BsTelephoneInbound size={15} /> CALL TO ORDER</p>
+        <p className='text-white px-6'>0209063000</p>
+        </div>
+      
      </div>
-     <div className='rounded-xl h-[45%] bg-blue-200  '>flyer </div>
+     <div className='rounded-xl h-[45%] bg-blue-200 p-5 flex-col '>
+      <div className='justify-even'><TbTruckDelivery size={60} />
+      <p className='font-semibold text-[20px]'>FAST DELIVERY</p></div>
+      <div>
+      <div className='justify-even'><FaRegHandshake size={60} />
+      <p className='font-semibold text-[20px]'>QUALITY PRODUCTS</p></div>
+      </div>
+     </div>
      </div>
   </div>
 </div>
-
-      
     
-      
-      <div className='products-heading'>
-        <h2>Best Selling Sneaker</h2>
-        <p>Variety of Sneakers</p>
+      <div className='bg-slate-50'>
+      <div className='products-heading bg-blue-700 '>
+        <h2 className='font-sans'>Flash Sale</h2>
+        <p></p>
       </div>
-       <div className='products-container'>
-         
+       <div >
+         <div className='products-container'>
           {products.map((product) => <Product  key =
           {product._id} product = {product}/>)}
+          </div>
+       </div>
        </div>
        
+       <div className='bg-slate-50'>
+      <div className='products-heading bg-blue-700'>
+        <h2 className='font-sans'>Hot Deals</h2>
+        <p></p>
+      </div>
+       <div >
+         <div className='products-container '>
+          {products.map((product) => <Product  key =
+          {product._id} product = {product}/>)}
+          </div>
+       </div>
+       </div>
     </div>
   )
 }
