@@ -7,12 +7,12 @@ import { FaRegHandshake } from 'react-icons/fa'
 //if banner data is available ln7 then parse the first element as a prop to herobanner instead
 
 //import { useUser } from '@auth0/nextjs-auth0/client';
-const index = ({products, bannerData} ) => {
+const index = ({products, bannerData , productshot} ) => {
   return (
     <div>
       <div>
   <div className="flex flex-row gap-4">
-    <div className="  w-2/12 p-5 half:block hidden bg-slate-50 rounded-2xl "><Sidebar /></div>
+    <div className="  w-2/12 p-5 h-[300px] half:block hidden bg-slate-50 rounded-2xl "><Sidebar /></div>
      <div className=" flex-1  w-3/5 h-[500px] sm:w-1/2  "><Herobanner herobanner = { bannerData} /></div> 
      <div className=" flex-col w-2/12  half:block hidden half: block hidden "><div className='flex-col items-center p-5 justify-items-center rounded-xl h-[20%] bg-zinc-900 mb-[10px] '>
       <div className='flex-col p-4'>
@@ -53,7 +53,7 @@ const index = ({products, bannerData} ) => {
       </div>
        <div >
          <div className='products-container '>
-          {products.map((product) => <Product  key =
+          {productshot.map((product) => <Product  key =
           {product._id} product = {product}/>)}
           </div>
        </div>
@@ -65,6 +65,8 @@ const index = ({products, bannerData} ) => {
 export const getServerSideProps = async () => {
  const query = '*[_type== "product" ]';
  const products = await client.fetch(query);
+ const queryhot = '*[_type== "product" && category == "Hot Deals" ]';
+ const productshot = await client.fetch(queryhot);
 
  const bannerquery = '*[_type== "banner" ]';
  const bannerData = await client.fetch(bannerquery);
@@ -72,7 +74,8 @@ export const getServerSideProps = async () => {
  return {
    props: {
      products,
-     bannerData
+     bannerData,
+     productshot
     }
    }
 }

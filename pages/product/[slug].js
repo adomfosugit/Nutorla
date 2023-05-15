@@ -66,7 +66,7 @@ const ProductDetails
 
 
         </div>
-                    {/* <div className='maylike-products-wrapper'>
+                     <div className='maylike-products-wrapper'>
                         <h2> Recommended Items</h2>
                         <div className='marquee'>
                             <div className='maylike-products-container track'>
@@ -77,7 +77,7 @@ const ProductDetails
                             </div>
                         </div> 
 
-                                </div> */ }
+                                </div>
 
 
 
@@ -108,7 +108,7 @@ export const getStaticPaths = async () => {
 }
 export const getStaticProps = async ({ params: {slug}}) => {
     const query = `*[_type== "product" && slug.current == '${slug}'][0]`;
-    const productsQuery = '*[__type == "product"]'
+    const productsQuery = '*[_type == "product"]'
     const product = await client.fetch(query);
     const products = await client.fetch(productsQuery);
    
