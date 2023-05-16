@@ -1,6 +1,7 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import { client } from "../../lib/client";
 import { Product } from "../../components";
+import Sidebar2 from "../../components/Sidebar2";
 
 const SearchPage = ({ products }) => {
   const search = useSearchParams();
@@ -9,7 +10,8 @@ const SearchPage = ({ products }) => {
   const encodedSearchQuery = encodeURI(searchQuery || "");
 
   return (
-    <div className="bg-slate-50">
+    <div className="mb-20">
+      <div className="invisible half:visible"><Sidebar2/></div>
       <div className="products-heading bg-blue-700">
         <h2 className="font-sans">{searchQuery}</h2>
       </div>
