@@ -1,14 +1,15 @@
 import React from 'react';
 import { Product } from '../../components';
 import { client } from '../../lib/client';
+import Sidebar2 from '../../components/Sidebar2';
 
 
 const Index = ({ products ,category}) => {
   return (
-    <div>
-            
+    <div className='flex flex-col '>
+            <div className='invisible half:visible'><Sidebar2/> </div>
         <div className='products-heading bg-blue-700'>
-        <h2 className='font-sans'>{category}</h2>
+        <h2 className='font-sans font-semibold'>{category}</h2>
       
       </div>
       <div className='products-container'>

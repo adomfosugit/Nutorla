@@ -13,7 +13,7 @@ const index = ({products, bannerData , productshot} ) => {
       <div>
   <div className="flex flex-row gap-4">
     <div className="  w-2/12 p-5 h-[300px] half:block hidden bg-slate-50 rounded-2xl "><Sidebar /></div>
-     <div className=" flex-1  w-3/5 h-[500px] sm:w-1/2  "><Herobanner herobanner = { bannerData} /></div> 
+     <div className=" flex-1  w-3/5 h-[500px] sm:w-1/2   "><Herobanner herobanner = { bannerData} /></div> 
      <div className=" flex-col w-2/12  half:block hidden half: block hidden "><div className='flex-col items-center p-5 justify-items-center rounded-xl h-[20%] bg-zinc-900 mb-[10px] '>
       <div className='flex-col p-4'>
         <p className='text-white items-center'><BsTelephoneInbound size={15} /> CALL TO ORDER</p>
