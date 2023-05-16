@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { AiOutlineShopping, AiOutlineUser } from 'react-icons/ai';
-import { TfiMenu } from 'react-icons/Tfi';
+import { TfiMenu } from 'react-icons/tfi';
 import { Cart } from './';
 import { useStateContext } from '../context/StateContext';
 import SearchInput from './Searchinput';
