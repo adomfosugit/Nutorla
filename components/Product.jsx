@@ -5,7 +5,7 @@ import { useStateContext } from '../context/StateContext';
 const Product = ({product  }) => {
   const { qty, onAdd} = useStateContext();
   return (
-    <div className='flex flex-row items-center bg-zinc-200 mb-2 ml-3 rounded-xl  sm:flex-col'>
+    <div className='flex flex-row items-center bg-zinc-200 mb-2 ml-3 rounded-xl  sm:flex-col  phone: w-[340px]'>
       <Link href= {`/product/${product.slug.current}`}>
                 <div className= "product-card">
                     <img src={urlFor(product.image && product.image[0])} 
@@ -25,7 +25,7 @@ const Product = ({product  }) => {
                         <div className='buttons flex'>
                        
                             <button type = 'button' 
-                            className='add-to-cart mb-3' onClick= {() => onAdd (product, qty)}>Add to Cart</button>
+                            className='p-2 text-white bg-blue-700 rounded boder-none mt-4' onClick= {() => onAdd (product, qty)}>Add to cart </button>
                             {/* <button type = 'button' 
                             className='buy-now' onClick=''>Buy Now</button>*/}
                         </div>
