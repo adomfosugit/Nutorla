@@ -1,18 +1,36 @@
 
 @tailwind components;
 @tailwind utilities;
+
 html,
-body, * {
+body,
+* {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   box-sizing: border-box;
-
+  scrollbar-width: none; /* Hide scrollbar on Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar on IE and Edge */
 }
+
+
+/* Hide scrollbar on webkit-based browsers */
 ::-webkit-scrollbar {
   width: 0px;
 }
+
+/* Hide scrollbar on Firefox */
+/* Firefox Quantum (57+) */
+* {
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar on IE and Edge */
+* {
+  -ms-overflow-style: none;
+}
+
 
 a {
   color: inherit;
@@ -105,13 +123,17 @@ width: 100%;
   justify-content: space-between;
   gap: 15px;
   margin-top: 20px;
-  width: 80%;
+  
+  
 }
 .product-card{
  cursor: pointer;
   transform: scale(1, 1);
   transition: transform 0.5s ease;
  color: #324d67;
+ 
+  
+ 
 
 }
 .product-card:hover{
@@ -515,6 +537,22 @@ padding: 30px 65px;
   transition: transform 0.5s ease;
 }
 .buttons .add-to-cart:hover{
+  transform:scale(1.1,1.1)
+}
+.add-to-cart{
+  padding: 10px 20px;
+  border: 1px solid #0044FF;
+  margin-top: 40px;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: white;
+  color: #0044FF;
+  cursor: pointer;
+  width: 150px;
+   transform: scale(1, 1);
+  transition: transform 0.5s ease;
+}
+.buttons .add-to-cart1:hover{
   transform:scale(1.1,1.1)
 }
 .buttons .buy-now{

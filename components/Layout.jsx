@@ -6,7 +6,7 @@ import Footer from './Footer'
 
 const Layout = ({children}) => {
   return (
-    <div className=  'p-2 bg-gradient-to-r from-slate-100 from-10% via-slate-400 via-30% to-blue-200 to-70% ... '>
+    <div className=  'p-2 bg-zinc-200 '>
     
         <Head >
             <title >
