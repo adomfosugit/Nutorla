@@ -5,7 +5,7 @@ import { useStateContext } from '../context/StateContext';
 const Product = ({product  }) => {
   const { qty, onAdd} = useStateContext();
   return (
-    <div className='flex flex-row items-center bg-zinc-200 mb-2 ml-3 rounded-xl  sm:flex-col  phone: w-[340px]'>
+    <div className='flex flex-row items-center bg-zinc-200 mb-2 ml-3 rounded-xl shadow-xl sm:flex-col  phone: w-[340px] '>
       <Link href= {`/product/${product.slug.current}`}>
                 <div className= "product-card">
                     <img src={urlFor(product.image && product.image[0])} 

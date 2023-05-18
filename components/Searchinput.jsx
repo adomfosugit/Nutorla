@@ -30,7 +30,7 @@ const SearchInput = () => {
         value={searchQuery || ""}
         onChange={(event) => setSearchQuery(event.target.value)}
         className="w-full px-4 py-2 text-black-200 bg-white-200 border-[1px] border-zinc-700  rounded-tl-full rounded-bl-full focus:outline-none focus:ring-[1px] focus:ring-sky-500 placeholder:text-zinc-400"
-        placeholder="What are you looking for?"
+        placeholder="Search"
         disabled={isLoading}
       />
       <button

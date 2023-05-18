@@ -22,7 +22,8 @@ const Index = ({ products ,category}) => {
 };
 
 export const getServerSideProps = async (context) => {
- const category = context.query.category || 'Hot deals';
+  const { query } = context;
+ const category = query.category || 'Hot Deals';
 
   const catquery = `*[_type == "product" && category == $category]`;
   const products = await client.fetch(catquery, { category });
