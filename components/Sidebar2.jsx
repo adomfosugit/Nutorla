@@ -3,14 +3,13 @@ import React from 'react';
 
 const Sidebar2 = () => {
   const categories = [
-    { name: 'Active Wear', link: '/categories/' },
-    { name: 'Blazers & Suites', link: '/categories/' },
-    { name: 'African Prints', link: '/categories/' },
-    { name: 'Coats & Jackets', link: '/categories/' },
-    { name: 'Jeans & Denim', link: '/categories/' },
-    { name: 'Sweaters', link: '/categories/' },
+    { name: 'Pants', link: '/categories/' },
+    { name: 'Jumpsuits', link: '/categories/' },
+    { name: 'Blouses', link: '/categories/' },
     { name: 'Skirts', link: '/categories/' },
-    { name: 'Hot Deals', link: '/categories/' },
+    { name: 'Two pieces', link: '/categories/' },
+    { name: 'Dresses', link: '/categories/' },
+    { name: 'Blazers', link: '/categories/' },
   ];
 
   return (

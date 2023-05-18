@@ -16,6 +16,7 @@ module.exports = {
       'half': '960px',
       // => @media (min-width: 960px) { ... }
       'phone': '400px',
+      'phone1': '280px',
 
     },
   },

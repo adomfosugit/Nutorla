@@ -34,7 +34,7 @@ const Herobanner = ({ herobanner }) => {
   return (
     <div className='rounded-2xl bg-blue-50'>
       <Swiper
-        className=''
+        className='bg-zinc-200'
         onSwiper={setSwiper}
         onSlideChange={handleSlideChange}
         onAutoplay={handleAutoplayEnd}
