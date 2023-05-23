@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container mx-auto flex flex-col half:flex-row justify-between items-center text-white">
         <div className="half:w-1/3">
           <h3 className="text-xl font-semibold">About Us</h3>
-          <p className="mt-2">
+          <p className="mt-2 ">
             NUTORLA is an online store dedicated to empowering women with stylish and fashionable clothing. We believe that every woman deserves to feel confident and express her unique style. Our carefully curated collection offers a wide range of trendy and high-quality clothing items that are designed to make you look and feel your best.
           </p>
         </div>

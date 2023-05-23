@@ -32,7 +32,7 @@ const Herobanner = ({ herobanner }) => {
     disableOnInteraction: false,
   };
   return (
-    <div className='rounded-2xl bg-blue-50'>
+    <div className=' bg-blue-50'>
       <Swiper
         className='bg-zinc-200'
         onSwiper={setSwiper}
@@ -68,6 +68,9 @@ const Herobanner = ({ herobanner }) => {
           &#10094;
         </div>
       </Swiper>
+      <div className='text-wrap m-2  rounded-2xl text-base'>Welcome to Nutorla, your ultimate destination for trendy and stylish women's clothing online. Discover the latest fashion trends and elevate your wardrobe with our carefully curated collection.
+      At Nutorla, we believe that fashion is an expression of individuality. That's why we offer a diverse range of clothing options that cater to all styles, sizes, and occasions. From casual essentials to elegant evening wear, we have something for every woman.</div>
+      
     </div>
   );
 };
