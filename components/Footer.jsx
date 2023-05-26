@@ -4,7 +4,7 @@ import { AiFillInstagram, AiOutlineTwitter } from 'react-icons/ai';
 const Footer = () => {
   return (
     <div className="bg-gray-900 py-4">
-      <div className="container mx-auto flex flex-col half:flex-row justify-between items-center text-white">
+      <div className="container mx-auto flex flex-col half:flex-row justify-even items-center text-white">
         <div className="half:w-1/3">
           <h3 className="text-xl font-semibold">About Us</h3>
           <p className="mt-2 ">
