@@ -11,7 +11,7 @@ const Sidebar1 = ({ onClose }) => {
     { name: 'Two pieces', link: '/categories/' },
     { name: 'Dresses', link: '/categories/' },
     { name: 'Blazers', link: '/categories/' },
-    { name: 'Pouch', link: '/categories/' },
+    { name: 'Pouch', link: '' },
   ];
 
   return (

@@ -44,7 +44,7 @@ const Navbar = () => {
             <AiOutlineUser/>
           </Link> */}
 
-          <button type='button' className='cart-icon'>
+          <button type='button' className='cart-icon z-50'>
             <Loginmenu />
           </button>
 
