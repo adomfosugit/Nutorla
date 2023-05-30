@@ -43,7 +43,7 @@ const ProductDetails
                         <p className='price'> GHC {price}</p>
                         <div className='quantity'>
                             <h3>Quantity :</h3>
-                            <p className='quantity-desc'>
+                            <p className='quantity-desc flex items-center'>
                                 <span className='minus' onClick= {decQty}><AiOutlineMinus />
 
                                 </span>
@@ -66,7 +66,7 @@ const ProductDetails
 
 
         </div>
-                     <div className='maylike-products-wrapper'>
+                    {/* <div className='maylike-products-wrapper'>
                         <h2> Recommended Items</h2>
                         <div className='marquee'>
                             <div className='maylike-products-container track'>
@@ -75,9 +75,9 @@ const ProductDetails
                                     product = {item}/>
                                 )))}
                             </div>
-                        </div> 
+                                </div> 
 
-                                </div>
+                                </div>*/}
 
 
 
