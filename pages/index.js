@@ -57,17 +57,20 @@ const index = ({products, bannerData , productshot,productspants,productsjump, p
         <p></p>
       </div>
        <div >
-         <div className='products-container mr-3'>
+         <div className='products-container mr-3 '>
           {products.map((product) => <Product  key =
           {product._id} product = {product}/>)}
           </div>
        </div>
           </div> 
       {/* Hot Deals  */}
-       <div className='bg-slate-50 mb-2'>
-      <div className='products-heading bg-blue-700'>
-        <h2 className='font-sans'>Hot Deals<Link  href = '/categories/'><BsFillArrowRightCircleFill size={20} className='mx-3 mt-2'/></Link></h2>
-        <p></p>
+       <div className='bg-slate-50 mb-2 items-center '>
+      <div className='bg-blue-700 flex flex-row justify-between text-white font-bold text-[40px] '>
+
+        <h2 className='font-sans'>Hot Deals</h2>
+        <div>
+        <Link  href = '/categories/'><BsFillArrowRightCircleFill size={20} className='m-6'/></Link>
+        </div>
       </div>
        <div >
          <div className='products-container mr-3'>
@@ -77,9 +80,9 @@ const index = ({products, bannerData , productshot,productspants,productsjump, p
        </div>
        {/* Pants  */}
        <div className='bg-slate-50'>
-      <div className='products-heading bg-blue-700   '>
-        <h2 className='font-sans'>Pants<Link  key={firstCategory.name}
-  href={{ pathname: firstCategory.link, query: { category: firstCategory.name } }}><BsFillArrowRightCircleFill size = {20} className='mx-3 mt-2'/></Link></h2> 
+      <div className='bg-blue-700 flex flex-row justify-between text-white font-bold text-[40px]    '>
+        <h2 className='font-sans'>Pants</h2><Link  key={firstCategory.name}
+  href={{ pathname: firstCategory.link, query: { category: firstCategory.name } }}><BsFillArrowRightCircleFill size = {20} className='m-6'/></Link>
         
       </div>
        <div >
@@ -91,10 +94,12 @@ const index = ({products, bannerData , productshot,productspants,productsjump, p
        </div>
        {/* demo 2 */}
        <div className='bg-slate-50'>
-      <div className='products-heading bg-blue-700  '>
-        <h2 className='font-sans'>Jumpsuits<Link key={secondCategory.name}
-  href={{ pathname: secondCategory.link, query: { category: secondCategory.name } }}><BsFillArrowRightCircleFill size = {20} className='mx-3 mt-2'/></Link></h2>
-        <p></p>
+      <div className=' bg-blue-700 flex flex-row justify-between text-white font-bold text-[40px] '>
+        <h2 className='font-sans'>Jumpsuits</h2>
+        <div><Link key={secondCategory.name}
+  href={{ pathname: secondCategory.link, query: { category: secondCategory.name } }}><BsFillArrowRightCircleFill size = {20} className='m-6'/></Link>
+  </div>
+        
       </div>
        <div >
          <div className='products-container mr-3'>
@@ -105,10 +110,10 @@ const index = ({products, bannerData , productshot,productspants,productsjump, p
        </div>
        {/* demo 3 */}
        <div className='bg-slate-50'>
-      <div className='products-heading bg-blue-700  '>
-        <h2 className='font-sans'>Blouses<Link key={thirdCategory.name}
-  href={{ pathname: thirdCategory.link, query: { category: thirdCategory.name } }}><BsFillArrowRightCircleFill size = {20} className='mx-3 mt-2'/></Link></h2>
-        <p></p>
+      <div className='bg-blue-700 flex flex-row justify-between text-white font-bold text-[40px]  '>
+        <h2 className='font-sans'>Blouses</h2><Link key={thirdCategory.name}
+  href={{ pathname: thirdCategory.link, query: { category: thirdCategory.name } }}><BsFillArrowRightCircleFill size = {20} className='m-6'/></Link>
+        
       </div>
        <div >
          <div className='products-container mr-3'>
@@ -119,10 +124,10 @@ const index = ({products, bannerData , productshot,productspants,productsjump, p
        </div>
        {/*  demo 4*/}
        <div className='bg-slate-50'>
-      <div className='products-heading bg-blue-700  '>
-        <h2 className='font-sans'>Skirts<Link key={fourthCategory.name}
-  href={{ pathname: fourthCategory.link, query: { category: fourthCategory.name } }}><BsFillArrowRightCircleFill size = {20}  className='mx-3 mt-2'/></Link></h2>
-        <p></p>
+      <div className='bg-blue-700 flex flex-row justify-between text-white font-bold text-[40px]   '>
+        <h2 className='font-sans'>Skirts</h2><Link key={fourthCategory.name}
+  href={{ pathname: fourthCategory.link, query: { category: fourthCategory.name } }}><BsFillArrowRightCircleFill size = {20}  className='m-6'/></Link>
+        
       </div>
        <div >
          <div className='products-container mr-3'>
@@ -133,10 +138,10 @@ const index = ({products, bannerData , productshot,productspants,productsjump, p
        </div>
        {/* demo 5*/}
        <div className='bg-slate-50'>
-      <div className='products-heading bg-blue-700  '>
-        <h2 className='font-sans'>Two Pieces<Link key={fifthCategory.name}
-  href={{ pathname: fifthCategory.link, query: { category: fifthCategory.name } }}><BsFillArrowRightCircleFill size = {20} className='mx-3 mt-2'/></Link></h2>
-        <p></p>
+      <div className='bg-blue-700 flex flex-row justify-between text-white font-bold text-[40px]   '>
+        <h2 className='font-sans'>Two Pieces</h2><Link key={fifthCategory.name}
+  href={{ pathname: fifthCategory.link, query: { category: fifthCategory.name } }}><BsFillArrowRightCircleFill size = {20} className='m-6'/></Link>
+        
       </div>
        <div >
          <div className='products-container mr-3'>
@@ -147,10 +152,10 @@ const index = ({products, bannerData , productshot,productspants,productsjump, p
        </div>
        {/*demo 6 */}
        <div className='bg-slate-50'>
-      <div className='products-heading bg-blue-700  '>
-        <h2 className='font-sans'>Dresses<Link key={sixthCategory.name}
-  href={{ pathname: sixthCategory.link, query: { category: sixthCategory.name } }}><BsFillArrowRightCircleFill size = {20} className='mx-3 mt-2'/></Link></h2>
-        <p></p>
+      <div className='bg-blue-700 flex flex-row justify-between text-white font-bold text-[40px]   '>
+        <h2 className='font-sans'>Dresses</h2><Link key={sixthCategory.name}
+  href={{ pathname: sixthCategory.link, query: { category: sixthCategory.name } }}><BsFillArrowRightCircleFill size = {20} className='m-6'/></Link>
+        
       </div>
        <div >
          <div className='products-container mr-3'>
@@ -161,10 +166,10 @@ const index = ({products, bannerData , productshot,productspants,productsjump, p
        </div>
        {/* demo 7 */}
        <div className='bg-slate-50'>
-      <div className='products-heading bg-blue-700  '>
-        <h2 className='font-sans'>Blazers<Link key={seventhCategory.name}
-  href={{ pathname: seventhCategory.link, query: { category: seventhCategory.name } }}><BsFillArrowRightCircleFill size = {20} className='mx-3 mt-2'/></Link></h2>
-        <p></p>
+      <div className='bg-blue-700 flex flex-row justify-between text-white font-bold text-[40px]   '>
+        <h2 className='font-sans'>Blazers</h2><Link key={seventhCategory.name}
+  href={{ pathname: seventhCategory.link, query: { category: seventhCategory.name } }}><BsFillArrowRightCircleFill size = {20} className='m-6'/></Link>
+        
       </div>
        <div >
          <div className='products-container mr-3'>

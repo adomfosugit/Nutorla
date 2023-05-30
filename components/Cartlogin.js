@@ -143,7 +143,7 @@ const PaystackHookExample = () => {
                 </div>
                 <div className="flex bottom">
                   <div>
-                  <p className="quantity-desc">
+                  <p className="quantity-desc flex items-center">
                     <span className="minus" onClick={() => toggleCartItemQuantity(item._id, 'dec') }>
                     <AiOutlineMinus />
                     </span>
