@@ -1,8 +1,7 @@
 import Link from 'next/link';
-import React from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 
-const Sidebar1 = ({ onClose }) => {
+const Sidebar = ({ onClose }) => {
   const categories = [
     { name: 'Pants', link: '/categories/' },
     { name: 'Jumpsuits', link: '/categories/' },
@@ -15,12 +14,12 @@ const Sidebar1 = ({ onClose }) => {
   ];
 
   return (
-    <div className='absolute top-0 left-0 w-1/2 h-1/2 z-10 bg-slate-50 shadow-2xl'>
-      <div className='flex items-center justify-between p-3'>
-        <h2 className='font-bold text-lg text-gradient'>Categories</h2>
-        <AiOutlineClose onClick={onClose} />
+    <div className="absolute top-0 left-0 w-64 h-screen bg-white shadow-2xl">
+      <div className="flex items-center justify-between p-3">
+        <h2 className="font-bold text-lg text-gradient">Categories</h2>
+        <AiOutlineClose onClick={onClose} className="cursor-pointer" />
       </div>
-      <div className='py-3'>
+      <div className="py-3">
         {categories.map((category, index) => (
           <Link
             onClick={onClose}
@@ -31,7 +30,7 @@ const Sidebar1 = ({ onClose }) => {
             }}
           >
             <p
-              className={`px-5 m-4 cursor-pointer rounded-xl hover:bg-blue-300 ${
+              className={`px-5 py-2 m-2 cursor-pointer rounded-lg hover:bg-blue-300 ${
                 index === categories.length - 1 ? 'pointer-events-none opacity-50' : ''
               }`}
             >
@@ -40,8 +39,10 @@ const Sidebar1 = ({ onClose }) => {
           </Link>
         ))}
       </div>
+
+     
     </div>
   );
 };
 
-export default Sidebar1;
+export default Sidebar;

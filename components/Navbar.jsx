@@ -24,9 +24,14 @@ const Navbar = () => {
         <p className='flex items-center'>
           <TfiMenu className='mx-2 half:hidden' onClick={handleButtonClick} />
           {isOpen && (
-            <div className='absolute top-0 left-0 w-full h-full z-10 bg-slate-50'>
+            <div className="relative">
+              <div   className="fixed top-0 left-0 z-20 w-full h-full bg-slate-900 opacity-90" onClick={handleClose}>
+                 <div className='fixed top-0 left-0 z-30 w-64 h-full bg-white shadow'>
               <Sidebar1 onClose={handleClose} />
             </div>
+              </div>
+              </div>
+           
           )}
           <Link href='/' className='font-bold text-lg text-gradient '>
             NUTORLA
