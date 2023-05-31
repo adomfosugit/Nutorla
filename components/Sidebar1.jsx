@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { AiOutlineClose } from 'react-icons/ai';
 
-const Sidebar = ({ onClose }) => {
+const Sidebar1 = ({ onClose }) => {
   const categories = [
     { name: 'Pants', link: '/categories/' },
     { name: 'Jumpsuits', link: '/categories/' },
@@ -14,7 +14,7 @@ const Sidebar = ({ onClose }) => {
   ];
 
   return (
-    <div className="absolute top-0 left-0 w-64 h-screen bg-white shadow-2xl">
+    <div className="absolute top-0 left-0 w-64 h-screen bg-gray-200 shadow-2xl">
       <div className="flex items-center justify-between p-3">
         <h2 className="font-bold text-lg text-gradient">Categories</h2>
         <AiOutlineClose onClick={onClose} className="cursor-pointer" />
@@ -39,10 +39,8 @@ const Sidebar = ({ onClose }) => {
           </Link>
         ))}
       </div>
-
-     
     </div>
   );
 };
 
-export default Sidebar;
+export default Sidebar1;
