@@ -168,7 +168,7 @@ const Index = () => {
         Generate Price
       </button>
    <button className="px-4 py-2 bg-blue-500 text-white rounded-md" >
-    <Link  href= 'https://paystack.com/pay/jhnu7korcv'></Link>
+    <Link  href= 'https://paystack.com/pay/jhnu7korcv'>PAY</Link>
    </button>
     </div>
   )}
