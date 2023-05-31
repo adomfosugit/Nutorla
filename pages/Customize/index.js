@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useStateContext } from '../../context/StateContext';
+import Link from 'next/link';
 
 const Index = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -166,7 +167,9 @@ const Index = () => {
       <button onClick={handleCustomize} className="px-4 py-2 bg-blue-500 text-white rounded-md">
         Generate Price
       </button>
-   
+   <button className="px-4 py-2 bg-blue-500 text-white rounded-md" >
+    <Link  href= 'https://paystack.com/pay/jhnu7korcv'></Link>
+   </button>
     </div>
   )}
     </div>
