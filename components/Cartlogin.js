@@ -174,18 +174,14 @@ const PaystackHookExample = () => {
          <button onClick={handleClick} className='btn' >checkout </button>
          
          { showForm && (
-        <form >
-  <input  type="text" placeholder="Name" value={shippingDetails.Name} onChange={handleInputChange}  required/>
-  <input  type="text" placeholder="Phone" value={shippingDetails.Phone} onChange={handleInputChange} required />
-  <input  type="text" placeholder="Address" value={shippingDetails.Address} onChange={handleInputChange}  required/>
+          <form className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white shadow-md rounded-lg p-6">
+  <input type="text" placeholder="Name" className="mb-4 w-full px-4 py-2 border border-gray-300 rounded" value={shippingDetails.Name} onChange={handleInputChange} required />
+  <input type="text" placeholder="Phone" className="mb-4 w-full px-4 py-2 border border-gray-300 rounded" value={shippingDetails.Phone} onChange={handleInputChange} required />
+  <input type="text" placeholder="Address" className="mb-4 w-full px-4 py-2 border border-gray-300 rounded" value={shippingDetails.Address} onChange={handleInputChange} required />
   {formValid && <PaystackHookExample />}
-  <div>
-    <div>  <TiDeleteOutline onClick={handleClose}  size={40} /> </div>
-  
-
- </div>
-
-
+  <div className="text-right">
+    <TiDeleteOutline onClick={handleClose} size={40} className="cursor-pointer" />
+  </div>
 </form> 
 
 )}
