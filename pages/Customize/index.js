@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useStateContext } from '../../context/StateContext';
 
 const Index = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -10,8 +11,10 @@ const Index = () => {
     size: '',
     price: ''
   });
-  
 
+  const { onAdd } = useStateContext();
+
+  // ...existing code...
   const products = [
     {
       name: 'Pants',
@@ -56,24 +59,47 @@ const Index = () => {
     if (selectedProduct && selectedColor && selectedSize) {
       // Find the selected product
       const product = products.find((p) => p.name === selectedProduct);
-  
+
       // Find the index of the selected color and size
       const colorIndex = product.colors.indexOf(selectedColor);
       const sizeIndex = product.sizes.indexOf(selectedSize);
-  
+
       // Calculate the price based on the selected color and size
       const price = parseInt(product.price.split(" ")[1]) + colorIndex * 10 + sizeIndex * 5;
-  
+
       // Customize logic goes here
       console.log(`Customizing ${selectedProduct} in color ${selectedColor} and size ${selectedSize}`);
       console.log(`Price: GHC ${price}`);
-  
+
       // Display the customization details and price in the summary
       setCustomizationSummary({
         product: selectedProduct,
         color: selectedColor,
         size: selectedSize,
         price: `GHC ${price}`
+      });
+    }
+  };
+
+  const handleAddToCart = () => {
+    if (selectedProduct && selectedColor && selectedSize) {
+      const product = products.find((p) => p.name === selectedProduct);
+      const item = {
+        name: selectedProduct,
+        color: selectedColor,
+        size: selectedSize,
+        price: customizationSummary.price
+      };
+      onAdd(item, 1);
+      // Reset the selected product, color, and size after adding to cart
+      setSelectedProduct(null);
+      setSelectedColor('');
+      setSelectedSize('');
+      setCustomizationSummary({
+        product: '',
+        color: '',
+        size: '',
+        price: ''
       });
     }
   };
@@ -135,10 +161,17 @@ const Index = () => {
       <p className="mb-2">Product: {selectedProduct}</p>
       <p className="mb-2">Color: {selectedColor}</p>
       <p className="mb-2">Size: {selectedSize}</p>
-      <p className="mb-2">Price: {customizationSummary.price}</p> {/* Display the price */}
+      <p className="mb-2">Price: {customizationSummary.price}</p> 
+      {/* Display the price */}
       <button onClick={handleCustomize} className="px-4 py-2 bg-blue-500 text-white rounded-md">
-        Customize
+        Generate Price
       </button>
+      <button
+      onClick={handleAddToCart}
+      className="px-4 py-2 bg-blue-500 text-white rounded-md mx-2"
+    >
+      Add To Cart
+    </button>
     </div>
   )}
     </div>
