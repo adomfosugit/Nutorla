@@ -178,6 +178,12 @@ const index = ({products, bannerData , productshot,productspants,productsjump, p
           </div>
        </div>
        </div>
+       <div className='bg-slate-50'>
+      <div className='bg-black flex flex-row justify-between text-white font-semibold text-[25px]   '>
+        <h2 className='font-sans'>Customize</h2><Link href= './Customize/'><BsFillArrowRightCircleFill size = {20} className='m-3'/></Link>
+        
+      </div>
+      </div>
        
        </div>
        
