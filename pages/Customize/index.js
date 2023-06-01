@@ -82,28 +82,7 @@ const Index = () => {
     }
   };
 
-  const handleAddToCart = () => {
-    if (selectedProduct && selectedColor && selectedSize) {
-      const product = products.find((p) => p.name === selectedProduct);
-      const item = {
-        name: selectedProduct,
-        color: selectedColor,
-        size: selectedSize,
-        price: customizationSummary.price
-      };
-      onAdd(item, 1);
-      // Reset the selected product, color, and size after adding to cart
-      setSelectedProduct(null);
-      setSelectedColor('');
-      setSelectedSize('');
-      setCustomizationSummary({
-        product: '',
-        color: '',
-        size: '',
-        price: ''
-      });
-    }
-  };
+
 
   return (
     <div className="container mx-auto p-4">

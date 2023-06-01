@@ -1,11 +1,5 @@
 {
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-<<<<<<< HEAD
-  "/Customize": "pages/Customize.js",
-  "/api/auth/[...auth0]": "pages/api/auth/[...auth0].js"
-=======
-  "/Customize": "pages/Customize.js"
->>>>>>> a44e7f9087cda104c1ae4f8dfb109d10f4a4e8b4
+  "/_document": "pages/_document.js"
 }
