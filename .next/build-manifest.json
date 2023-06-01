@@ -15,6 +15,11 @@
   ],
   "rootMainFiles": [],
   "pages": {
+    "/Customize": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/Customize.js"
+    ],
     "/_app": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
