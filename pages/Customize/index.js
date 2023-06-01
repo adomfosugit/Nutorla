@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useStateContext } from '../../context/StateContext';
+
 import Link from 'next/link';
 
 const Index = () => {
