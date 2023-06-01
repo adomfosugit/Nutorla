@@ -13,7 +13,7 @@ const Index = () => {
     price: ''
   });
 
-  const { onAdd } = useStateContext();
+  // const { onAdd } = useStateContext();
 
   // ...existing code...
   const products = [
